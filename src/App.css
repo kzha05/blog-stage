@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+	--light-grey-black: #272a2a;
+	--grey-black: #242424;
+	--dark-grey-black: #1a1a1a;
+	--grey-white: rgba(255, 255, 255, 0.87);
+	--dark-text: #626161;
+	--stage-1: #3e4d43;
+	--stage-2: #34405d;
+	--active: #70616a;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+#root {
+	width: 100%;
+	height: 100vh;
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+.header {
+	background: var(--grey-black);
+	border-bottom: var(--grey-white) 1px solid;
+	width: 100%;
+	height: 20%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 3rem 0 1rem;
+}
+
+.header nav{
+	display: flex;
+	gap: 2rem;
+}
+
+nav button {
+	padding: 0.5rem 1rem;
+	background-color: var(--grey-black);
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+
+nav button:hover {
+	background-color: var(--dark-grey-black);
+}
+
+nav button.active {
+	background-color: var(--active); /* You can change the color for active buttons */
+	color: white;
+	font-weight: bold;  /* Make the active button bold */
+}
+
+.profile{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	aspect-ratio: 1;
+	background: rebeccapurple;
+}
+
+.main {
+	background: var(--light-grey-black);
+	width: 100%;
+	height: 80%;
+	color: white;
+	display: flex;
+	flex-direction: row; /* Added this to prevent centering from affecting layout */
+	align-items: flex-start; /* Align to the top to prevent stretching */
+	justify-content: center;
+	min-height: 0; /* Important to allow children to scroll */
+}
+
+#posts-scroll::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+#posts-scroll::-webkit-scrollbar
+{
+	width: 0.8rem;
+	background-color: #F5F5F5;
+}
+
+#posts-scroll::-webkit-scrollbar-thumb
+{
+	background-color: #555;
+}
+
+.posts {
+	background: var(--light-grey-black);
+	width: 80%;
+	height: 100%; /* This is fine, but make sure .main allows scrolling */
+	max-height: 100%; /* Ensure it doesn't exceed parent height */
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start; /* Allow content to scroll */
+	align-items: center;
+	gap: 2rem;
+	overflow-y: scroll; /* Scroll content if it overflows */
+	padding: 2rem;
+	min-height: 0; /* Allow scrolling */
+}
+
+.post{
+	width: 50%;
+	min-height: 60%;
+	max-height: 60%;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: baseline;
+	border-radius: 15px;
+	padding: 2rem;
+	gap: 0.8rem;
+	border: var(--grey-white) 1px solid;
+	background: var(--grey-black);
+}
+
+.category{
+	background: var(--stage-1);
+	padding: 0.5rem 1rem;
+	border-radius: 15px;
+}
+
+.post-date{
+	color: var(--dark-text);
+}
+
+.post-text{
+	display: -webkit-box;
+	max-width: 25rem;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.side-bar{
+	background: var(--dark-grey-black);
+	width: 20%;
+	height: 100%;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#text-scroll{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: baseline;
+	overflow-y: scroll;
+	padding: 5rem;
+	gap: 1rem;
+}
